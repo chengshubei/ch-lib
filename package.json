@@ -1,6 +1,6 @@
 {
   "name": "ch-vendor",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "一些常用模块的封装和辅助函数",
   "main": "index.js",
   "scripts": {
