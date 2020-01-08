@@ -73,7 +73,7 @@ let QueryString = (obj, excepts = [], isReverse = false) => {
     let rs = [];
     for (let k of keys) {
         if (! excepts.includes(k)) {
-            let v = ['string', 'boolean', 'number'].includes(typeof obj[k]) ? String(v) : '';
+            let v = ['string', 'boolean', 'number'].includes(typeof obj[k]) ? String(obj[k]) : '';
             rs.push(`${k}=${encodeURIComponent(v)}`);
         }
     }
