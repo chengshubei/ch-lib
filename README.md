@@ -32,7 +32,7 @@ const Mysql = sequelize({
     1. sequelize
     2. commander
     3. readline
-    4. helper(包含: )
+    4. helper(包含: aes加解密, ed25519生成公私钥, 分页, querystring等)
 
 ## 提示
 
