@@ -7,11 +7,13 @@ let Md5 = (str, secret = '') => {
     return crypto.createHash('md5').update(s, 'utf-8').digest('hex');
 };
 
+//已废弃的AES加密算法
 let AesCipher = (str, secret = '') => {
     let cipher = crypto.createCipher('aes-256-cbc', secret);
     let crypted = cipher.update(str, 'utf8', 'hex');
     return crypted += cipher.final('hex');
 };
+//已废弃的AES解密算法
 let AesDecipher = (str, secret = '') => {
     try {
         let decipher = crypto.createDecipher('aes-256-cbc', secret);
@@ -45,11 +47,13 @@ let AESDecipher = (str, key = 'aXxrS26hq6LhipSr', iv = 'anJL7eDzjqWj5aY9') => {
     }
 };
 
+//Ed25519加密算法生成私钥
 let CreatePriKey = (pwd, random = '') => {
     const sha3 = require('js-sha3');
     let keccak_256 = sha3.keccak_256;
     return keccak_256(pwd + random);
 };
+//Ed25519加密算法生成公钥
 let PriToPubKey = priKey => {
     const nacl = require('tweetnacl');
     let pribyte = Buffer.from(priKey, 'hex');
@@ -57,6 +61,7 @@ let PriToPubKey = priKey => {
     return Buffer.from(seed.publicKey).toString('hex');
 };
 
+//手工分页
 let Paging = (a, p = 1, pz = 10) => {
     if (!Array.isArray(a)) return null;
     let count = a.length;
@@ -66,6 +71,7 @@ let Paging = (a, p = 1, pz = 10) => {
     return {count, rows};
 };
 
+//json数据序列化
 let QueryString = (obj, excepts = [], isReverse = false) => {
     if (obj === null || typeof obj !== 'object') return '';
     let keys = Object.keys(obj).sort();

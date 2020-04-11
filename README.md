@@ -15,7 +15,7 @@ $ npm install ch-vendor
 Always pretty by default:
 
 ```js
-const {sequelize} = require('ch-vendor');
+const {sequelize, rabbitmq: RabbitMQ} = require('ch-vendor');
 const Mysql = sequelize({
     host: '172.16.0.155',
     database: 'mine',
@@ -29,10 +29,11 @@ const Mysql = sequelize({
 
 ## 模块
 
-1. sequelize
-2. commander
-3. readline
+1. sequelize (最新校验过的依赖: "mysql2": "^2.1.0", "sequelize": "^5.21.6")
+2. commander (最新校验过的依赖: "commander": "^5.0.0")
+3. readline 
 4. helper(包含: aes加解密, ed25519生成公私钥, 分页, querystring等)
+5. rabbitmq (最新校验过的依赖: "amqplib": "^0.5.5", "moment": "^2.24.0")
 
 ## 提示
 
