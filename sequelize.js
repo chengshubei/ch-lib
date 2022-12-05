@@ -31,9 +31,9 @@ module.exports = (config) => {
         logging: config.logger ? console.warn : false,
         timezone: '+08:00',
         define: {
-            freezeTableName: true,
-            timestamps: false,
-            underscored: true,
+            freezeTableName: 'freezeTableName' in config ? config.freezeTableName : true,
+            timestamps: config.timestamps || false,
+            underscored: 'underscored' in config ?config.underscored : true,
             charset: 'utf8mb4',
             collate: 'utf8mb4_general_ci'
         }
